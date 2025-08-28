@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Valhalla Online Coding Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="features.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="particles-container" id="particles"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Valhalla<span class="logo-highlight">Labs</span></div>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li class="active"><a href="#">Features</a></li>
+      <li><a href="../problems/problems.html">Problems</a></li>
+      <li><a href="../contests/contests.html">Contests</a></li>
+      <li><a href="../interview/interview.html">Interview</a></li>
+      <li><a href="../university/university.html">University</a></li>
+      <li><a href="../mentor/mentor.html">Mentor</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
+    </ul>
+    <button class="cta-button">Get Started</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Powerful Features</h1>
+      <p>Discover the comprehensive tools and features that make Valhalla the ultimate coding platform for developers of all levels.</p>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section">
+    <div class="features-grid">
+      <!-- AI Mentor Feature -->
+      <div class="feature-card" data-feature="ai-mentor">
+        <div class="feature-icon">
+          <i class="ri-robot-2-line"></i>
+        </div>
+        <h3>Cyrus AI Mentor</h3>
+        <p>Get personalized coding guidance from our advanced AI mentor that adapts to your learning style and skill level.</p>
+        <div class="feature-details">
+          <ul>
+            <li>Personalized learning paths</li>
+            <li>Real-time code analysis</li>
+            <li>Smart recommendations</li>
+            <li>24/7 availability</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Free Interview Questions -->
+      <div class="feature-card" data-feature="interview">
+        <div class="feature-icon">
+          <i class="ri-question-answer-line"></i>
+        </div>
+        <h3>Free Interview Questions</h3>
+        <p>Access thousands of company-specific interview questions from top tech companies to ace your next interview.</p>
+        <div class="feature-details">
+          <ul>
+            <li>Company-tagged questions</li>
+            <li>Difficulty-based filtering</li>
+            <li>Solution explanations</li>
+            <li>Interview tips & strategies</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Coding Contests -->
+      <div class="feature-card" data-feature="contests">
+        <div class="feature-icon">
+          <i class="ri-trophy-line"></i>
+        </div>
+        <h3>Coding Contests</h3>
+        <p>Participate in regular coding contests, compete with developers worldwide, and climb the leaderboards.</p>
+        <div class="feature-details">
+          <ul>
+            <li>Weekly contests</li>
+            <li>Real-time leaderboards</li>
+            <li>Prize competitions</li>
+            <li>Skill-based matching</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Auto-Grading System -->
+      <div class="feature-card" data-feature="grading">
+        <div class="feature-icon">
+          <i class="ri-check-double-line"></i>
+        </div>
+        <h3>Auto-Grading System</h3>
+        <p>Instant feedback on your code with our advanced auto-grading system that checks correctness and efficiency.</p>
+        <div class="feature-details">
+          <ul>
+            <li>Instant code evaluation</li>
+            <li>Performance metrics</li>
+            <li>Detailed feedback</li>
+            <li>Test case validation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Problem Repository -->
+      <div class="feature-card" data-feature="problems">
+        <div class="feature-icon">
+          <i class="ri-code-box-line"></i>
+        </div>
+        <h3>Vast Problem Repository</h3>
+        <p>Access over 5,000 coding problems across multiple difficulty levels and programming languages.</p>
+        <div class="feature-details">
+          <ul>
+            <li>5,000+ problems</li>
+            <li>Multiple languages</li>
+            <li>Topic-based categories</li>
+            <li>Progressive difficulty</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- University Integration -->
+      <div class="feature-card" data-feature="university">
+        <div class="feature-icon">
+          <i class="ri-school-line"></i>
+        </div>
+        <h3>University Integration</h3>
+        <p>Seamlessly integrate with academic coursework, upload assignments, and track your academic progress.</p>
+        <div class="feature-details">
+          <ul>
+            <li>Assignment uploads</li>
+            <li>Grade tracking</li>
+            <li>Course integration</li>
+            <li>Academic analytics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Section -->
+  <section class="demo-section">
+    <h2>See Features in Action</h2>
+    <div class="demo-container">
+      <div class="demo-tabs">
+        <button class="demo-tab active" data-demo="editor">Code Editor</button>
+        <button class="demo-tab" data-demo="ai">AI Mentor</button>
+        <button class="demo-tab" data-demo="analytics">Analytics</button>
+      </div>
+      <div class="demo-content">
+        <div class="demo-panel active" id="editor-demo">
+          <div class="code-editor-demo">
+            <div class="editor-header">
+              <span class="editor-title">Two Sum Problem</span>
+              <div class="editor-actions">
+                <button class="run-btn">Run Code</button>
+                <button class="submit-btn">Submit</button>
+              </div>
+            </div>
+            <div class="editor-body">
+              <pre><code>def two_sum(nums, target):
+    hash_map = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hash_map:
+            return [hash_map[complement], i]
+        hash_map[num] = i
+    return []</code></pre>
+            </div>
+            <div class="editor-output">
+              <div class="output-header">Output</div>
+              <div class="output-content">✅ All test cases passed!</div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-panel" id="ai-demo">
+          <div class="ai-chat-demo">
+            <div class="chat-message bot">
+              <div class="bot-avatar"><i class="ri-robot-2-line"></i></div>
+              <div class="message-content">I noticed you're working on the Two Sum problem. Would you like me to explain the optimal approach?</div>
+            </div>
+            <div class="chat-message user">
+              <div class="message-content">Yes, please explain the hash map approach.</div>
+            </div>
+            <div class="chat-message bot">
+              <div class="bot-avatar"><i class="ri-robot-2-line"></i></div>
+              <div class="message-content">The hash map approach reduces time complexity from O(n²) to O(n). We store each number and its index, then check if the complement exists.</div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-panel" id="analytics-demo">
+          <div class="analytics-demo">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">127</div>
+                <div class="stat-label">Problems Solved</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Success Rate</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">42</div>
+                <div class="stat-label">Day Streak</div>
+              </div>
+            </div>
+            <div class="progress-chart">
+              <div class="chart-title">Weekly Progress</div>
+              <div class="chart-bars">
+                <div class="bar" style="height: 60%"><span>Mon</span></div>
+                <div class="bar" style="height: 80%"><span>Tue</span></div>
+                <div class="bar" style="height: 45%"><span>Wed</span></div>
+                <div class="bar" style="height: 90%"><span>Thu</span></div>
+                <div class="bar" style="height: 70%"><span>Fri</span></div>
+                <div class="bar" style="height: 55%"><span>Sat</span></div>
+                <div class="bar" style="height: 85%"><span>Sun</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Valhalla<span class="logo-highlight">Labs</span></div>
+      <div class="footer-links">
+        <a href="../../index.html">Home</a>
+        <a href="#">Features</a>
+        <a href="../problems/problems.html">Problems</a>
+        <a href="../contests/contests.html">Contests</a>
+        <a href="../interview/interview.html">Interview</a>
+        <a href="../university/university.html">University</a>
+        <a href="../mentor/mentor.html">Mentor</a>
+        <a href="../contact/contact.html">Contact</a>
+      </div>
+      <p class="copyright">© 2025 Valhalla. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="features.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prep - Valhalla Online Coding Platform</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="interview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Valhalla</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../features/features.html">Features</a></li>
+                <li><a href="../problems/problems.html">Problems</a></li>
+                <li><a href="../contests/contests.html">Contests</a></li>
+                <li><a href="interview.html" class="active">Interview</a></li>
+                <li><a href="../university/university.html">University</a></li>
+                <li><a href="../mentor/mentor.html">Mentor</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Interview Preparation</h1>
+                <p class="hero-subtitle">Master coding interviews with company-specific questions and AI-powered practice</p>
+            </div>
+        </section>
+
+        <section class="interview-section">
+            <div class="container">
+                <div class="company-filters">
+                    <h3>Filter by Company</h3>
+                    <div class="company-grid">
+                        <button class="company-btn active" data-company="all">All Companies</button>
+                        <button class="company-btn" data-company="google">Google</button>
+                        <button class="company-btn" data-company="amazon">Amazon</button>
+                        <button class="company-btn" data-company="microsoft">Microsoft</button>
+                        <button class="company-btn" data-company="meta">Meta</button>
+                        <button class="company-btn" data-company="apple">Apple</button>
+                        <button class="company-btn" data-company="netflix">Netflix</button>
+                        <button class="company-btn" data-company="uber">Uber</button>
+                    </div>
+                </div>
+
+                <div class="interview-stats">
+                    <div class="stat-card">
+                        <h4>Questions Solved</h4>
+                        <span class="stat-number">247</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Success Rate</h4>
+                        <span class="stat-number">87%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Mock Interviews</h4>
+                        <span class="stat-number">12</span>
+                    </div>
+                </div>
+
+                <div class="questions-container">
+                    <div class="questions-header">
+                        <h3>Interview Questions</h3>
+                        <div class="question-filters">
+                            <select class="filter-select" id="difficulty-filter">
+                                <option value="all">All Difficulties</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <select class="filter-select" id="topic-filter">
+                                <option value="all">All Topics</option>
+                                <option value="arrays">Arrays</option>
+                                <option value="strings">Strings</option>
+                                <option value="trees">Trees</option>
+                                <option value="graphs">Graphs</option>
+                                <option value="dp">Dynamic Programming</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="questions-list">
+                        <div class="question-item" data-company="google" data-difficulty="medium" data-topic="arrays">
+                            <div class="question-info">
+                                <h4>Two Sum Variations</h4>
+                                <div class="question-meta">
+                                    <span class="company-tag google">Google</span>
+                                    <span class="difficulty medium">Medium</span>
+                                    <span class="topic-tag">Arrays</span>
+                                </div>
+                                <p>Find all pairs in an array that sum to a target value with various constraints.</p>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn-outline">Practice</button>
+                                <button class="btn-primary">Mock Interview</button>
+                            </div>
+                        </div>
+
+                        <div class="question-item" data-company="amazon" data-difficulty="hard" data-topic="trees">
+                            <div class="question-info">
+                                <h4>Binary Tree Maximum Path Sum</h4>
+                                <div class="question-meta">
+                                    <span class="company-tag amazon">Amazon</span>
+                                    <span class="difficulty hard">Hard</span>
+                                    <span class="topic-tag">Trees</span>
+                                </div>
+                                <p>Find the maximum sum of any path in a binary tree.</p>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn-outline">Practice</button>
+                                <button class="btn-primary">Mock Interview</button>
+                            </div>
+                        </div>
+
+                        <div class="question-item" data-company="microsoft" data-difficulty="easy" data-topic="strings">
+                            <div class="question-info">
+                                <h4>Valid Palindrome</h4>
+                                <div class="question-meta">
+                                    <span class="company-tag microsoft">Microsoft</span>
+                                    <span class="difficulty easy">Easy</span>
+                                    <span class="topic-tag">Strings</span>
+                                </div>
+                                <p>Determine if a string is a valid palindrome, ignoring non-alphanumeric characters.</p>
+                            </div>
+                            <div class="question-actions">
+                                <button class="btn-outline">Practice</button>
+                                <button class="btn-primary">Mock Interview</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mock-interview-section">
+                    <div class="mock-interview-card">
+                        <h3>AI-Powered Mock Interview</h3>
+                        <p>Practice with our AI interviewer that simulates real company interview experiences</p>
+                        <div class="mock-features">
+                            <div class="feature">
+                                <span class="feature-icon">🎯</span>
+                                <span>Company-specific questions</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Real-time feedback</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📊</span>
+                                <span>Performance analytics</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary large">Start Mock Interview</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Valhalla</h3>
+                    <p>Elevating coding skills through competitive programming and AI-powered learning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="../features/features.html">Features</a></li>
+                        <li><a href="../problems/problems.html">Problems</a></li>
+                        <li><a href="../contests/contests.html">Contests</a></li>
+                        <li><a href="../mentor/mentor.html">AI Mentor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Valhalla Online Coding Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="interview.js"></script>
+</body>
+</html>

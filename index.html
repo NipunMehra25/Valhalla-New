@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valhalla - Advanced Coding Questions Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+  <!-- Intro Animation -->
+  <div class="intro-animation" id="introAnimation">
+    <div class="intro-particles" id="introParticles"></div>
+    <div class="intro-content">
+      <div class="intro-glow"></div>
+      <div class="intro-text">Valhalla</div>
+    </div>
+  </div>
+
+  <div class="all_content">
+    <!-- Particles Container -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Valhalla<span class="logo-highlight">Labs</span></div>
+      <ul class="nav-links">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="../pages/features/features.html">Features</a></li>
+        <li><a href="../pages/problems/problems.html">Problems</a></li>
+        <li><a href="../pages/contests/contests.html">Contest</a></li>
+      </ul>
+      <button class="cta-button">Get Started</button>
+    </nav>
+    <spline-viewer id="model" url="https://prod.spline.design/560sBTZPJH9Y3DZ1/scene.splinecode"></spline-viewer>
+    <!-- Hero Section -->
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="code-bg" id="code-animation"></div>
+    <div class="hero-content">
+      <!-- ✅ Cleaned-up single Valhalla block -->
+      <div class="text-container" id="hero-brand">
+
+        <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;Valhalla&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="text-highlight">&nbsp;&nbsp;&nbsp;&nbsp;Valhalla&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="stars"></div>
+      </div>
+
+      <p>Valhalla delivers intelligent coding problems tailored to your skill level. Practice with real-world scenarios and elevate your programming skills.</p>
+      <button class="cta-button hero-cta">Start Coding Now</button>
+    </div>
+  </section>
+
+
+  <!-- Remix & Devicon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <div class="slider">
+    <div class="slider-track">
+      <!-- Tech icons with labels -->
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="tech-icon" />
+        <p>HTML</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="tech-icon" />
+        <p>CSS</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="tech-icon" />
+        <p>JavaScript</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo" class="tech-icon">
+        <p>Python</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" class="tech-icon"/>
+        <p>Swift</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" class="tech-icon"/>
+        <p>C</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="tech-icon" />
+        <p>C++</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="tech-icon"/>
+        <p>React</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" class="tech-icon" />
+        <p>Figma</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="tech-icon" />
+        <p>Git</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" class="tech-icon" />
+        <p>GitLab</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" class="tech-icon" />
+        <p>Kotlin</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" class="tech-icon" />
+        <p>php</p>
+      </div>
+
+
+      <!-- Duplicate for seamless infinite scroll -->
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="tech-icon" />
+        <p>HTML</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="tech-icon" />
+        <p>CSS</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="tech-icon" />
+        <p>JavaScript</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo" class="tech-icon">
+        <p>Python</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" class="tech-icon"/>
+        <p>Swift</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" class="tech-icon"/>
+        <p>C</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="tech-icon" />
+        <p>C++</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="tech-icon"/>
+        <p>React</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" class="tech-icon" />
+        <p>Figma</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="tech-icon" />
+        <p>Git</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" class="tech-icon" />
+        <p>GitLab</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" class="tech-icon" />
+        <p>Kotlin</p>
+      </div>
+      <div class="tech">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" class="tech-icon" />
+        <p>php</p>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 class="section-title">Powerful Features</h2>
+      <p class="section-subtitle">Discover the tools that will accelerate your coding journey and help you become a better developer.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Interactive Code Editor</h3>
+          <p class="feature-description">Write, test, and debug your code in our powerful editor with auto-completion and real-time error checking.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="feature-title">AI-Powered Challenges</h3>
+          <p class="feature-description">Our AI analyzes your coding style and skill level to provide personalized challenges that help you grow.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="feature-title">Community Learning</h3>
+          <p class="feature-description">Connect with other developers, share solutions, and learn from the best practices of the global coding community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 class="stat-number">5,000+</h3>
+          <p class="stat-label">Coding Challenges</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">15</h3>
+          <p class="stat-label">Programming Languages</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">250K+</h3>
+          <p class="stat-label">Active Developers</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">98%</h3>
+          <p class="stat-label">Satisfaction Rate</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Chat Assistant Section -->
+    
+    <section class="ai-chat-section">
+      <div class="ai-chat-container">
+        <div class="ai-chat-header">
+          <h2 class="section-title">Cyrus Coding Assistant</h2>
+          <p>Chat with our friendly coding assistant.</p>
+        </div>
+        <div class="ai-chat-content">
+          <div class="glass-chat-wrapper">
+            <div class="chat-orb chat-orb-1"></div>
+            <div class="chat-orb chat-orb-2"></div>
+            <div class="chat-orb chat-orb-3"></div>
+            <div class="chat-container" id="chatContainer">
+              <div class="glass-panel"></div>
+              <div class="chat-header">
+  <span class="glow">✨</span> Cyrus <span class="glow">✨</span>
+
+              </div>
+              <div class="chat-body" id="chatBody">
+                <div class="message bot">
+                  <div class="bot-icon"><i class="ri-robot-2-line"></i></div>
+                  <div class="message-content">Hey there! Need some help with coding?</div>
+                </div>
+                <div class="message user">
+                  <div class="message-content">Yes, I need help with my C program.</div>
+                </div>
+                <div class="message bot">
+                  <div class="bot-icon"><i class="ri-robot-2-line"></i></div>
+                  <div class="message-content">Got it! Let’s dive right in. What's your question?</div>
+                </div>
+                <div class="message user">
+                  <div class="message-content">How do I reverse a string in C without using <code>strrev()</code>?</div>
+                </div>
+                <div class="message bot" id="typingIndicator">
+                  <div class="bot-icon"><i class="ri-robot-2-line"></i></div>
+                  <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-footer">
+                <input type="text" placeholder="Type a message..." id="messageInput" />
+                <button id="sendButton">
+                  <i class="ri-send-plane-2-fill"></i>
+                </button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="ai-chat-info">
+            <div class="ai-chat-features">
+              <div class="ai-feature">
+                <div class="ai-feature-icon"><i class="ri-lightbulb-flash-line"></i></div>
+                <h3>Smart Assistance</h3>
+                <p>GlassBot understands your coding problems and responds with clarity.</p>
+              </div>
+              <div class="ai-feature">
+                <div class="ai-feature-icon"><i class="ri-code-line"></i></div>
+                <h3>Coding Help</h3>
+                <p>Get help with your code instantly – from bugs to logic explanations.</p>
+              </div>
+              <div class="ai-feature">
+                <div class="ai-feature-icon"><i class="ri-terminal-box-line"></i></div>
+                <h3>Learn with Examples</h3>
+                <p>GlassBot gives you examples to help you understand better.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Leaderboard Section -->
+  <section class="leaderboard-section">
+    <div class="leaderboard-container">
+      <div class="section-header">
+        <h2 class="section-title">Top Coders Leaderboard</h2>
+        <p>Our highest-ranking developers this month</p>
+      </div>
+      
+      <!-- Trophy Animation Container -->
+      <div class="trophy-container">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="ri-trophy-fill"></i>
+          </div>
+          <div class="achievement-text">
+            <small>Champion</small>
+            <strong>Code Master</strong>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Leaderboard Table -->
+      <div class="leaderboard-wrapper">
+        <div class="leaderboard-header">
+          <div class="rank-col">Rank</div>
+          <div class="user-col">User</div>
+          <div class="score-col">Score</div>
+          <div class="lang-col">Languages</div>
+          <div class="streak-col">Streak</div>
+        </div>
+        
+        <div class="leaderboard-body" id="leaderboardBody">
+          <!-- Rows will be populated by JavaScript -->
+        </div>
+      </div>
+      
+  <!-- New Rocket Animation Container -->
+  <div id="dynamicRockets"></div>
+
+    </div>
+  </section>
+
+
+    
+    
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">CodeFlix<span class="logo-highlight">Labs</span></div>
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Documentation</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="copyright">© 2025 Valhalla. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+
+    
+
+  // --- Basic Setup ---
+  const heroContainer = document.getElementById('hero-brand');
+  const heroHighlight = heroContainer?.querySelector('.text-highlight');
+  const heroStars = heroContainer?.querySelector('.stars');
+  const chatContainer = document.getElementById('chatContainer');
+  const chatBody = document.getElementById('chatBody');
+  const typingIndicator = document.querySelector('.typing-indicator-container');
+
+  // --- Particle Generation (Hero Section) ---
+  function generateParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+
+    const count = window.innerWidth < 768 ? 30 : 100;
+    const colors = ['#6e56cf', '#10b981', '#0ea5e9'];
+
+    for (let i = 0; i < count; i++) {
+      const size = Math.random() * 5 + 1;
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        animation-delay: ${Math.random() * 5}s;
+        animation-duration: ${8 + Math.random() * 10}s;
+      `;
+      container.appendChild(particle);
+    }
+  }
+
+  // --- Parallax (Limited for Mobile) ---
+  function handleParallax() {
+    if (window.innerWidth < 768) return; // Disable for mobile
+    const cards = document.querySelectorAll('.feature-card');
+
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth - 0.5;
+      const mouseY = e.clientY / window.innerHeight - 0.5;
+      cards.forEach(card => {
+        const offsetX = mouseX * 10;
+        const offsetY = mouseY * 10;
+        card.style.transform = `translateY(-5px) rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
+      });
+    });
+  }
+
+  // --- Twinkling Stars ---
+  function createStars() {
+    if (!heroStars) return;
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      const size = Math.random() * 2 + 1;
+      star.classList.add('star');
+      star.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        opacity: ${Math.random() * 0.4 + 0.4};
+        animation-duration: ${Math.random() * 4 + 4}s;
+        animation-delay: ${Math.random() * 5}s;
+      `;
+      heroStars.appendChild(star);
+    }
+  }
+
+  // --- Hover Reveal Effect ---
+  let lastClip = 0, ticking = false;
+  function updateClip(x) {
+    if (!heroContainer || !heroHighlight) return;
+    const rect = heroContainer.getBoundingClientRect();
+    const percentage = Math.min(Math.max((x / rect.width) * 100, 0), 100);
+    if (Math.abs(percentage - lastClip) > 0.5) {
+      heroHighlight.style.setProperty('--clip-pos', `${percentage}%`);
+      lastClip = percentage;
+    }
+  }
+
+  if (heroContainer) {
+    heroContainer.addEventListener('mousemove', (e) => {
+      const x = e.clientX - heroContainer.getBoundingClientRect().left;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateClip(x);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    heroContainer.addEventListener('mouseleave', () => {
+      if (heroHighlight) heroHighlight.style.setProperty('--clip-pos', '0%');
+    });
+
+    heroContainer.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].clientX - heroContainer.getBoundingClientRect().left;
+      updateClip(x);
+    });
+
+    heroContainer.addEventListener('touchend', () => {
+      if (heroHighlight) heroHighlight.style.setProperty('--clip-pos', '0%');
+    });
+  }
+
+  // --- AI Chat Particles ---
+  function createChatParticles() {
+    const chatSection = document.querySelector('.ai-chat-section');
+    if (!chatSection) return;
+    const count = window.innerWidth < 768 ? 10 : 30;
+    const colors = ['rgba(110, 86, 207, 0.6)', 'rgba(16, 185, 129, 0.6)', 'rgba(14, 165, 233, 0.6)'];
+
+    for (let i = 0; i < count; i++) {
+      const size = Math.random() * 3 + 1;
+      const particle = document.createElement('div');
+      particle.className = 'chat-particle';
+      particle.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        animation-duration: ${Math.random() * 15 + 10}s;
+        animation-delay: ${Math.random() * 5}s;
+      `;
+      chatSection.appendChild(particle);
+    }
+  }
+
+  // --- Smooth Initialization ---
+  window.addEventListener('DOMContentLoaded', () => {
+    generateParticles();
+    createStars();
+    handleParallax();
+    createChatParticles();
+
+    if (window.innerWidth < 768) {
+  chatContainer.style.animation = 'none';
+}
+
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+  // Sample leaderboard data
+  const leaderboardData = [
+    {
+      rank: 1,
+      name: "Alex Chen",
+      title: "Full Stack Developer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 9845,
+      languages: ["JavaScript", "Python", "React"],
+      streak: 87
+    },
+    {
+      rank: 2,
+      name: "Sophia Rodriguez",
+      title: "AI Engineer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 9721,
+      languages: ["Python", "TensorFlow"],
+      streak: 92
+    },
+    {
+      rank: 3,
+      name: "Marcus Johnson",
+      title: "Backend Developer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 9456,
+      languages: ["Java", "Go", "SQL"],
+      streak: 65
+    },
+    {
+      rank: 4,
+      name: "Emma Wilson",
+      title: "Mobile Developer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8932,
+      languages: ["Swift", "Kotlin"],
+      streak: 78
+    },
+    {
+      rank: 5,
+      name: "David Kim",
+      title: "DevOps Engineer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8745,
+      languages: ["Python", "Docker", "AWS"],
+      streak: 54
+    },
+    {
+      rank: 6,
+      name: "Olivia Taylor",
+      title: "Frontend Developer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8621,
+      languages: ["JavaScript", "React", "CSS"],
+      streak: 71
+    },
+    {
+      rank: 7,
+      name: "James Lee",
+      title: "Security Specialist",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8432,
+      languages: ["C++", "Python"],
+      streak: 63
+    },
+    {
+      rank: 8,
+      name: "Ava Martinez",
+      title: "Data Scientist",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8219,
+      languages: ["Python", "R", "SQL"],
+      streak: 49
+    },
+    {
+      rank: 9,
+      name: "Noah Garcia",
+      title: "Game Developer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 8105,
+      languages: ["C#", "Unity", "JavaScript"],
+      streak: 58
+    },
+    {
+      rank: 10,
+      name: "Isabella Brown",
+      title: "UX Engineer",
+      avatar: "/placeholder.svg?height=80&width=80",
+      score: 7986,
+      languages: ["JavaScript", "Figma", "CSS"],
+      streak: 42
+    }
+  ];
+
+  // Populate leaderboard
+  const leaderboardBody = document.getElementById('leaderboardBody');
+  
+  if (leaderboardBody) {
+    leaderboardData.forEach((user, index) => {
+      const row = document.createElement('div');
+      row.className = 'leaderboard-row';
+      
+      // Determine rank badge class
+      let rankBadgeClass = '';
+      if (user.rank === 1) rankBadgeClass = 'rank-1';
+      else if (user.rank === 2) rankBadgeClass = 'rank-2';
+      else if (user.rank === 3) rankBadgeClass = 'rank-3';
+      
+      // Create language badges HTML
+      const languageBadges = user.languages.map(lang => 
+        `<div class="lang-badge">${lang}</div>`
+      ).join('');
+      
+      // Set row content
+      row.innerHTML = `
+        <div class="rank-col">
+          ${user.rank <= 3 
+            ? `<div class="rank-badge ${rankBadgeClass}">${user.rank}</div>` 
+            : user.rank}
+        </div>
+        <div class="user-col">
+          <div class="user-avatar" style="background-image: url('${user.avatar}')"></div>
+          <div class="user-info">
+            <div class="user-name">${user.name}</div>
+            <div class="user-title">${user.title}</div>
+          </div>
+        </div>
+        <div class="score-col">${user.score.toLocaleString()}</div>
+        <div class="lang-col">${languageBadges}</div>
+        <div class="streak-col">
+          <div class="streak-bar">
+            <div class="streak-progress" data-progress="${user.streak}"></div>
+          </div>
+          <div class="streak-days">${user.streak} day streak</div>
+        </div>
+      `;
+      
+      // Add sparkles for top 3 ranks
+      if (user.rank <= 3) {
+        for (let i = 0; i < 5; i++) {
+          const sparkle = document.createElement('div');
+          sparkle.className = 'sparkle';
+          sparkle.style.left = `${Math.random() * 100}%`;
+          sparkle.style.top = `${Math.random() * 100}%`;
+          row.querySelector('.rank-badge').appendChild(sparkle);
+        }
+      }
+      
+      leaderboardBody.appendChild(row);
+    });
+  }
+
+  // Animate elements when they come into view
+  function animateOnScroll() {
+    // Animate leaderboard rows
+    const rows = document.querySelectorAll('.leaderboard-row:not(.visible)');
+    rows.forEach((row, index) => {
+      const rect = row.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.9) {
+        // Add visible class with delay based on index
+        setTimeout(() => {
+          row.classList.add('visible');
+          
+          // Animate streak progress bar
+          const progressBar = row.querySelector('.streak-progress');
+          if (progressBar) {
+            const progress = progressBar.getAttribute('data-progress');
+            progressBar.style.width = `${Math.min(progress, 100)}%`;
+          }
+          
+          // Animate sparkles for top ranks
+          const sparkles = row.querySelectorAll('.sparkle');
+          sparkles.forEach((sparkle, i) => {
+            setTimeout(() => {
+              sparkle.style.animation = `sparkleAnimation ${1 + Math.random()}s infinite`;
+              sparkle.style.opacity = '1';
+            }, i * 200);
+          });
+        }, index * 150);
+      }
+    });
+    
+    // Animate rockets
+    const leaderboardSection = document.querySelector('.leaderboard-section');
+    if (leaderboardSection) {
+      const rect = leaderboardSection.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
+        const rockets = document.querySelectorAll('.rocket');
+        rockets.forEach((rocket, index) => {
+          if (!rocket.classList.contains(`animate-rocket-${index + 1}`)) {
+            rocket.classList.add(`animate-rocket-${index + 1}`);
+            
+            // Animate rocket trail
+            const trail = rocket.querySelector('.rocket-trail');
+            if (trail) {
+              trail.classList.add('animate');
+              
+              // Create particle effects for the trail
+              setInterval(() => {
+                if (rocket.getBoundingClientRect().top > 0 && 
+                    rocket.getBoundingClientRect().top < window.innerHeight) {
+                  createTrailParticle(rocket);
+                }
+              }, 100);
+            }
+          }
+        });
+      }
+    }
+  }
+  
+  // Create trail particles for rockets
+  function createTrailParticle(rocket) {
+    const particle = document.createElement('div');
+    particle.className = 'sparkle';
+    particle.style.position = 'absolute';
+    
+    const rocketRect = rocket.getBoundingClientRect();
+    const containerRect = document.querySelector('.rocket-container').getBoundingClientRect();
+    
+    const x = rocketRect.left - containerRect.left + rocketRect.width / 2;
+    const y = rocketRect.bottom - containerRect.top;
+    
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.opacity = '1';
+    particle.style.animation = 'fadeOut 1s forwards';
+    
+    document.querySelector('.rocket-container').appendChild(particle);
+    
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
+  }
+  
+  // Add sparkle animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes sparkleAnimation {
+      0%, 100% { transform: scale(0.8); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      0% { opacity: 1; transform: translate(0, 0); }
+      100% { opacity: 0; transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 + 10}px); }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Initial animation
+  setTimeout(animateOnScroll, 500);
+  
+  // Listen for scroll events
+  window.addEventListener('scroll', animateOnScroll);
+  
+  // Re-trigger animations when window is resized
+  window.addEventListener('resize', animateOnScroll);
+});
+
+let activeRockets = 0;
+const maxRockets = 6; // ✨ You can change this to your preferred max rocket count
+
+function launchRockets(count = 3) {
+  const rocketContainer = document.getElementById("dynamicRockets");
+
+  // Only add rockets if under the max limit
+  if (activeRockets >= maxRockets) return;
+
+  for (let i = 0; i < count; i++) {
+    if (activeRockets >= maxRockets) break;
+
+    const rocket = document.createElement("div");
+    rocket.className = "floating-rocket";
+    rocket.innerHTML = '<i class="ri-rocket-line"></i>';
+
+    // Position & animation duration
+    rocket.style.left = Math.random() * 90 + "%";
+    const duration = Math.random() * 3 + 4;
+    rocket.style.animationDuration = `${duration}s`;
+    rocket.style.animationDelay = `${Math.random()}s`;
+
+    // Burst effect on finish
+    const burst = document.createElement("div");
+    burst.className = "rocket-burst";
+    rocket.appendChild(burst);
+
+    rocketContainer.appendChild(rocket);
+    activeRockets++;
+
+    setTimeout(() => {
+      burst.classList.add("burst-animate");
+      rocket.querySelector("i").style.opacity = "0";
+      setTimeout(() => {
+        rocket.remove();
+        activeRockets--; // ✅ Decrease count when removed
+      }, 600);
+    }, duration * 1000);
+  }
+}
+
+
+  // Trigger rocket animations when leaderboard scrolls into view
+  const leaderboard = document.querySelector(".leaderboard-section");
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      launchRockets(5);
+    }
+  }, { threshold: 0.3 });
+
+  if (leaderboard) observer.observe(leaderboard);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const introAnimation = document.getElementById('introAnimation');
+    const mainContent = document.querySelector('.all_content');
+    const introParticles = document.getElementById('introParticles');
+
+    function createParticles() {
+      const particleCount = window.innerWidth < 768 ? 30 : 60;
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        const size = Math.random() * 4 + 2;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const xOffset = (Math.random() - 0.5) * 100;
+        const delay = Math.random() * 3;
+        particle.style.cssText = `
+          width: ${size}px;
+          height: ${size}px;
+          left: ${posX}%;
+          top: ${posY}%;
+          --x-offset: ${xOffset}px;
+          animation-delay: ${delay}s;
+        `;
+        introParticles.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    setTimeout(() => {
+      introAnimation.style.opacity = '0';
+      mainContent.style.opacity = '1';
+      setTimeout(() => {
+        introAnimation.style.display = 'none';
+      }, 1800);
+    }, 5000);
+  });
+  
+
+    setInterval(() => {
+    const viewer = document.querySelector('spline-viewer');
+    if (viewer && viewer.shadowRoot) {
+        const logo = viewer.shadowRoot.querySelector('#logo');
+        if (logo) logo.remove();
+    }
+    }, 50); // every 50ms is enough
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contests - Valhalla Online Coding Platform</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="contests.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Valhalla</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../features/features.html">Features</a></li>
+                <li><a href="../problems/problems.html">Problems</a></li>
+                <li><a href="contests.html" class="active">Contests</a></li>
+                <li><a href="../interview/interview.html">Interview</a></li>
+                <li><a href="../university/university.html">University</a></li>
+                <li><a href="../mentor/mentor.html">Mentor</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Coding Contests</h1>
+                <p class="hero-subtitle">Compete with developers worldwide and climb the leaderboard</p>
+            </div>
+        </section>
+
+        <section class="contests-section">
+            <div class="container">
+                <div class="contests-tabs">
+                    <button class="tab-btn active" data-tab="live">Live Contests</button>
+                    <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+                    <button class="tab-btn" data-tab="past">Past Contests</button>
+                    <button class="tab-btn" data-tab="leaderboard">Leaderboard</button>
+                </div>
+
+                <div class="tab-content active" id="live">
+                    <div class="contests-grid">
+                        <div class="contest-card live">
+                            <div class="contest-status">LIVE</div>
+                            <h3>Weekly Challenge #47</h3>
+                            <p>Dynamic Programming & Graph Theory</p>
+                            <div class="contest-info">
+                                <span>⏱️ 2h 15m left</span>
+                                <span>👥 1,247 participants</span>
+                            </div>
+                            <button class="btn-primary">Join Contest</button>
+                        </div>
+                        
+                        <div class="contest-card live">
+                            <div class="contest-status">LIVE</div>
+                            <h3>Algorithm Sprint</h3>
+                            <p>Fast-paced coding challenges</p>
+                            <div class="contest-info">
+                                <span>⏱️ 45m left</span>
+                                <span>👥 892 participants</span>
+                            </div>
+                            <button class="btn-primary">Join Contest</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="upcoming">
+                    <div class="contests-grid">
+                        <div class="contest-card upcoming">
+                            <div class="contest-status">UPCOMING</div>
+                            <h3>Monthly Championship</h3>
+                            <p>Advanced algorithms and data structures</p>
+                            <div class="contest-info">
+                                <span>📅 Starts in 2 days</span>
+                                <span>🏆 $5,000 prize pool</span>
+                            </div>
+                            <button class="btn-secondary">Set Reminder</button>
+                        </div>
+                        
+                        <div class="contest-card upcoming">
+                            <div class="contest-status">UPCOMING</div>
+                            <h3>Beginner's Cup</h3>
+                            <p>Perfect for coding newcomers</p>
+                            <div class="contest-info">
+                                <span>📅 Starts in 5 days</span>
+                                <span>🎯 Beginner friendly</span>
+                            </div>
+                            <button class="btn-secondary">Set Reminder</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="past">
+                    <div class="contests-grid">
+                        <div class="contest-card past">
+                            <div class="contest-status">COMPLETED</div>
+                            <h3>Weekly Challenge #46</h3>
+                            <p>String algorithms and parsing</p>
+                            <div class="contest-info">
+                                <span>🏆 Winner: CodeMaster99</span>
+                                <span>👥 1,456 participants</span>
+                            </div>
+                            <button class="btn-outline">View Results</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="leaderboard">
+                    <div class="leaderboard-container">
+                        <div class="leaderboard-filters">
+                            <select class="filter-select">
+                                <option>All Time</option>
+                                <option>This Month</option>
+                                <option>This Week</option>
+                            </select>
+                        </div>
+                        <div class="leaderboard-table">
+                            <div class="leaderboard-header">
+                                <span>Rank</span>
+                                <span>User</span>
+                                <span>Rating</span>
+                                <span>Contests</span>
+                            </div>
+                            <div class="leaderboard-row">
+                                <span class="rank gold">1</span>
+                                <span class="user">
+                                    <div class="avatar"></div>
+                                    <span>AlgorithmGod</span>
+                                </span>
+                                <span class="rating">2847</span>
+                                <span>156</span>
+                            </div>
+                            <div class="leaderboard-row">
+                                <span class="rank silver">2</span>
+                                <span class="user">
+                                    <div class="avatar"></div>
+                                    <span>CodeNinja</span>
+                                </span>
+                                <span class="rating">2756</span>
+                                <span>142</span>
+                            </div>
+                            <div class="leaderboard-row">
+                                <span class="rank bronze">3</span>
+                                <span class="user">
+                                    <div class="avatar"></div>
+                                    <span>DataStructurePro</span>
+                                </span>
+                                <span class="rating">2689</span>
+                                <span>138</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Valhalla</h3>
+                    <p>Elevating coding skills through competitive programming and AI-powered learning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="../features/features.html">Features</a></li>
+                        <li><a href="../problems/problems.html">Problems</a></li>
+                        <li><a href="contests.html">Contests</a></li>
+                        <li><a href="../mentor/mentor.html">AI Mentor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Valhalla Online Coding Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contests.js"></script>
+</body>
+</html>
