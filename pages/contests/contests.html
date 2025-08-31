@@ -4,42 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contests - Valhalla Online Coding Platform</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="contests.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./contests.css">
+    <link rel="stylesheet" href="/features/features.css">
 </head>
 <body>
+    <div class="particles-container" id="particles"></div>
+
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Valhalla</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../features/features.html">Features</a></li>
-                <li><a href="../problems/problems.html">Problems</a></li>
-                <li><a href="contests.html" class="active">Contests</a></li>
-                <li><a href="../interview/interview.html">Interview</a></li>
-                <li><a href="../university/university.html">University</a></li>
-                <li><a href="../mentor/mentor.html">Mentor</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+        <div class="logo">Valhalla<span class="logo-highlight">Labs</span></div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../features/features.html">Features</a></li>
+            <li><a href="../problems/problems.html">Problems</a></li>
+            <li class="active"><a href="#">Contests</a></li>
+            <li><a href="../interview/interview.html">Interview</a></li>
+            <li><a href="../university/university.html">University</a></li>
+            <li><a href="../mentor/mentor.html">Mentor</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+        </ul>
+        <button class="cta-button">Get Started</button>
     </nav>
 
-    <main class="main-content">
-        <section class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">Coding Contests</h1>
-                <p class="hero-subtitle">Compete with developers worldwide and climb the leaderboard</p>
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contest</h1>
+            <p>Compete in AI-powered coding contests with real-time feedback, fair rankings, and challenges for every skill level.</p>
+        </div>
+    </section>
 
+    <main class="main-content">
         <section class="contests-section">
             <div class="container">
                 <div class="contests-tabs">
@@ -166,38 +161,24 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Valhalla</h3>
-                    <p>Elevating coding skills through competitive programming and AI-powered learning.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="../features/features.html">Features</a></li>
-                        <li><a href="../problems/problems.html">Problems</a></li>
-                        <li><a href="contests.html">Contests</a></li>
-                        <li><a href="../mentor/mentor.html">AI Mentor</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="../contact/contact.html">Contact</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Valhalla<span class="logo-highlight">Labs</span></div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../features/features.html">Features</a>
+                <a href="../problems/problems.html">Problems</a>
+                <a href="#">Contests</a>
+                <a href="../interview/interview.html">Interview</a>
+                <a href="../university/university.html">University</a>
+                <a href="../mentor/mentor.html">Mentor</a>
+                <a href="../contact/contact.html">Contact</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Valhalla Online Coding Platform. All rights reserved.</p>
-            </div>
+            <p class="copyright">© 2025 Valhalla. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="contests.js"></script>
+    <script src="/features/features.js"></script>
+    <script src="./contests.js"></script>
 </body>
 </html>
