@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Add active class to clicked tab and corresponding content
       btn.classList.add("active")
-      document.getElementById(targetTab).classList.add("active")
+      document.getElementById(targetTab)?.classList.add("active")
     })
   })
 
@@ -27,14 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Contest card interactions
   const contestCards = document.querySelectorAll(".contest-card")
-
   contestCards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
-      card.style.transform = "translateY(-8px) scale(1.02)"
+      card.style.transform = "translateY(-10px) rotateX(5deg)"
     })
 
     card.addEventListener("mouseleave", () => {
-      card.style.transform = "translateY(0) scale(1)"
+      card.style.transform = "translateY(0) rotateX(0)"
     })
   })
 
@@ -43,12 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   liveTimers.forEach((timer) => {
     setInterval(() => {
-      const currentText = timer.textContent
-      if (currentText.includes("2h 15m")) {
-        timer.textContent = "⏱️ 2h 14m left"
-      } else if (currentText.includes("45m")) {
-        timer.textContent = "⏱️ 44m left"
-      }
+      const t = timer.textContent || ""
+      if (t.includes("2h 15m")) timer.textContent = "⏱️ 2h 14m left"
+      else if (t.includes("45m")) timer.textContent = "⏱️ 44m left"
     }, 60000) // Update every minute
   })
 })

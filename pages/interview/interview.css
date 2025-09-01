@@ -1,3 +1,139 @@
+@import url("../../style.css");
+
+:root {
+  --text-primary: var(--text);
+  --text-secondary: var(--text-secondary);
+  --glass-bg: var(--bg-glass);
+  --glass-border: var(--border-glass);
+  --primary-color: var(--primary);
+  --secondary-color: var(--secondary);
+}
+
+.hero {
+  padding: 120px 10% 80px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(110, 86, 207, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+/* Fixed Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-logo .logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-menu li a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.nav-menu li a.active,
+.nav-menu li a:hover {
+  color: var(--primary);
+}
+
+.nav-menu li a.active::after,
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Fixed Main Content */
+.main-content {
+  padding-top: 100px; /* Account for fixed navbar */
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(110, 86, 207, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Interview Section */
 .interview-section {
   padding: 4rem 0;
 }
@@ -18,8 +154,8 @@
 }
 
 .company-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
   border-radius: 25px;
   padding: 0.75rem 1.5rem;
   color: var(--text-secondary);
@@ -54,7 +190,8 @@
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(110, 86, 207, 0.1);
 }
 
 .stat-card h4 {
@@ -70,9 +207,9 @@
 }
 
 .questions-container {
-  background: var(--glass-bg);
+  background: var(--bg-glass);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border-glass);
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -97,8 +234,8 @@
 }
 
 .filter-select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
   border-radius: 8px;
   padding: 0.5rem 1rem;
   color: var(--text-primary);
@@ -116,8 +253,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -205,6 +342,36 @@
   gap: 1rem;
 }
 
+.btn-outline {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary {
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
 .mock-interview-section {
   margin-top: 3rem;
 }
@@ -251,24 +418,3 @@
   font-size: 1.1rem;
 }
 
-@media (max-width: 768px) {
-  .question-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .question-actions {
-    width: 100%;
-    justify-content: stretch;
-  }
-
-  .question-actions button {
-    flex: 1;
-  }
-
-  .mock-features {
-    flex-direction: column;
-    align-items: center;
-  }
-}
