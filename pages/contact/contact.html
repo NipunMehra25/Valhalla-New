@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Valhalla Online Coding Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./contact.css">
+    <link rel="stylesheet" href="/features/features.css">
+</head>
+<body>
+    <spline-viewer id="model" url="https://prod.spline.design/UOc6DSf9jk-jx0X6/scene.splinecode"></spline-viewer>
+
+    <div class="particles-container" id="particles"></div>
+
+
+    <nav class="navbar">
+        <div class="logo">Valhalla<span class="logo-highlight">Labs</span></div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../features/features.html">Features</a></li>
+            <li><a href="../problems/problems.html">Problems</a></li>
+            <li><a href="../contests/contests.html">Contests</a></li>
+            <li><a href="../interview/interview.html">Interview</a></li>
+            <li><a href="../university/university.html">University</a></li>
+            <li><a href="../mentor/mentor.html">Mentor</a></li>
+            <li class="active"><a href="#">Contact</a></li>
+        </ul>
+        <button class="cta-button">Get Started</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team. We're here to help you on your coding journey.</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-tabs">
+                    <button class="tab-btn active" data-tab="message">Send Message</button>
+                    <button class="tab-btn" data-tab="info">Contact Info</button>
+                    <button class="tab-btn" data-tab="faq">FAQ</button>
+                    <button class="tab-btn" data-tab="support">Support</button>
+                </div>
+
+                <div class="tab-content active" id="message">
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="bug">Bug Report</option>
+                                </select>
+                                <span class="error-message" id="subjectError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                                <span class="character-count" id="charCount">0/1000 characters</span>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary">
+                                    <span class="btn-text">Send Message</span>
+                                    <div class="loading-spinner"></div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="info">
+                    <div class="contact-info-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email Support</h3>
+                            <p>Get help from our support team</p>
+                            <div class="contact-detail">support@valhalllabs.com</div>
+                            <div class="response-time">Response time: 24 hours</div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">💬</div>
+                            <h3>Live Chat</h3>
+                            <p>Chat with us in real-time</p>
+                            <div class="contact-detail">Available 24/7</div>
+                            <button class="btn-secondary">Start Chat</button>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <h3>Phone Support</h3>
+                            <p>Call us for urgent matters</p>
+                            <div class="contact-detail">+1 (555) 123-4567</div>
+                            <div class="response-time">Mon-Fri, 9AM-6PM EST</div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">🏢</div>
+                            <h3>Office Location</h3>
+                            <p>Visit us at our headquarters</p>
+                            <div class="contact-detail">
+                                123 Tech Street<br>
+                                Silicon Valley, CA 94000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="faq">
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I reset my password?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can reset your password by clicking the "Forgot Password" link on the login page. We'll send you a secure link to create a new password.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What programming languages are supported?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We support over 15 programming languages including Python, Java, C++, JavaScript, Go, Rust, and many more.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I participate in contests?</h3>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Simply visit the Contests page, choose an active contest, and click "Join Contest". Make sure you're logged in to your account.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="support">
+                    <div class="support-grid">
+                        <div class="support-card priority">
+                            <div class="support-status">PRIORITY</div>
+                            <h3>Premium Support</h3>
+                            <p>Get priority assistance with dedicated support</p>
+                            <div class="support-features">
+                                <span>✓ 4-hour response time</span>
+                                <span>✓ Direct phone support</span>
+                                <span>✓ Screen sharing sessions</span>
+                            </div>
+                            <button class="btn-primary">Upgrade to Premium</button>
+                        </div>
+                        
+                        <div class="support-card community">
+                            <div class="support-status">FREE</div>
+                            <h3>Community Support</h3>
+                            <p>Get help from our amazing community</p>
+                            <div class="support-features">
+                                <span>✓ Community forums</span>
+                                <span>✓ Peer-to-peer help</span>
+                                <span>✓ Knowledge base</span>
+                            </div>
+                            <button class="btn-outline">Visit Forums</button>
+                        </div>
+                        
+                        <div class="support-card docs">
+                            <div class="support-status">SELF-HELP</div>
+                            <h3>Documentation</h3>
+                            <p>Comprehensive guides and tutorials</p>
+                            <div class="support-features">
+                                <span>✓ API documentation</span>
+                                <span>✓ Video tutorials</span>
+                                <span>✓ Best practices</span>
+                            </div>
+                            <button class="btn-secondary">View Docs</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="successMessage" class="success-message">
+                    <div class="success-icon">✓</div>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for contacting us. Our team will review your message and get back to you within 24 hours.</p>
+                    <button id="sendAnother" class="btn-secondary">Send Another Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Valhalla<span class="logo-highlight">Labs</span></div>
+            <div class="footer-links">
+                <a href="../../index.html">Home</a>
+                <a href="../features/features.html">Features</a>
+                <a href="../problems/problems.html">Problems</a>
+                <a href="../contests/contests.html">Contests</a>
+                <a href="../interview/interview.html">Interview</a>
+                <a href="../university/university.html">University</a>
+                <a href="../mentor/mentor.html">Mentor</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">© 2025 Valhalla. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"></script>
+    <script src="/features/features.js"></script>
+    <script>
+            setInterval(() => {
+            const viewer = document.querySelector('spline-viewer');
+            if (viewer && viewer.shadowRoot) {
+                const logo = viewer.shadowRoot.querySelector('#logo');
+                if (logo) logo.remove();
+            }
+            }, 50); // every 50ms is enough
+    </script>
+</body>
+</html>
