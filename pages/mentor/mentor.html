@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor - Valhalla Online Coding Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Import base styles */
+    :root {
+      --primary: #6e56cf;
+      --primary-glow: #8b73e8;
+      --secondary: #10b981;
+      --bg: #0a0a0a;
+      --bg-glass: rgba(20, 20, 20, 0.7);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --text: #e5e5e5;
+      --text-secondary: #a1a1aa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Particles Background */
+    .particles-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at top, rgba(110, 86, 207, 0.15), transparent),
+                  radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.15), transparent);
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+      }
+    }
+
+    /* Navbar - Exact match */
+    .navbar {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .logo-highlight {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .nav-links li a:hover {
+      color: var(--text);
+    }
+
+    .nav-links li.active a {
+      color: var(--text);
+    }
+
+    .nav-links li.active a::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(110, 86, 207, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 10% 60px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(110, 86, 207, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Chat Section */
+    .chat-section {
+      padding: 40px 10%;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Conversations Sidebar */
+    .conversations-sidebar {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: fit-content;
+      max-height: calc(100vh - 300px);
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-header h3 {
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .new-chat-btn {
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .new-chat-btn:hover {
+      background: var(--primary-glow);
+      transform: translateY(-2px);
+    }
+
+    .conversation-item {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .conversation-item:hover {
+      border-color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .conversation-item.active {
+      border-color: var(--primary);
+      background: rgba(110, 86, 207, 0.2);
+    }
+
+    .conversation-title {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .conversation-preview {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .conversation-time {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Main Chat Container */
+    .chat-container {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 300px);
+    }
+
+    .chat-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-info h2 {
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .chat-status {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      background: var(--secondary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .chat-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .action-btn {
+      padding: 0.5rem 1rem;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .action-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Messages Area */
+    .messages-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .messages-container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .messages-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .messages-container::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    .message {
+      display: flex;
+      gap: 1rem;
+      animation: messageSlideIn 0.3s ease;
+      max-width: 75%;
+    }
+
+    @keyframes messageSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .message.bot {
+      align-self: flex-start;
+    }
+
+    .message-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .message.user .message-avatar {
+      background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+    }
+
+    .message.bot .message-avatar {
+      background: linear-gradient(135deg, var(--secondary), #059669);
+    }
+
+    .message-content {
+      padding: 1rem 1.5rem;
+      border-radius: 18px;
+      line-height: 1.6;
+      word-wrap: break-word;
+      border: 1px solid var(--border-glass);
+    }
+
+    .message.user .message-content {
+      background: linear-gradient(135deg, rgba(110, 86, 207, 0.3), rgba(139, 115, 232, 0.3));
+      color: var(--text);
+      border-top-right-radius: 4px;
+    }
+
+    .message.bot .message-content {
+      background: rgba(30, 30, 30, 0.8);
+      color: var(--text);
+      border-top-left-radius: 4px;
+    }
+
+    .loading {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .loading span {
+      width: 8px;
+      height: 8px;
+      background: var(--secondary);
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .loading span:nth-child(1) { animation-delay: -0.32s; }
+    .loading span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    /* Input Section */
+    .input-section {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .input-section input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .input-section input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(110, 86, 207, 0.1);
+    }
+
+    .input-section input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .send-btn {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .send-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(110, 86, 207, 0.3);
+    }
+
+    .send-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .welcome-message {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-secondary);
+    }
+
+    .welcome-message i {
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-message h3 {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border-glass);
+      padding: 2rem 10%;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .copyright {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .chat-section {
+        grid-template-columns: 1fr;
+      }
+
+      .conversations-sidebar {
+        max-height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .navbar {
+        padding: 1rem 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .message {
+        max-width: 90%;
+      }
+
+      .chat-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .input-section {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles-container" id="particles"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Valhalla<span class="logo-highlight">Labs</span></div>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../features/features.html">Features</a></li>
+      <li><a href="../problems/problems.html">Problems</a></li>
+      <li><a href="../contests/contests.html">Contests</a></li>
+      <li><a href="../interview/interview.html">Interview</a></li>
+      <li><a href="../university/university.html">University</a></li>
+      <li class="active"><a href="#">Mentor</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
+    </ul>
+    <button class="cta-button">Get Started</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AI Mentor Assistant</h1>
+      <p>Get personalized guidance and support from our AI-powered mentor to accelerate your coding journey.</p>
+    </div>
+  </section>
+
+  <!-- Chat Section -->
+  <section class="chat-section">
+    <!-- Conversations Sidebar -->
+    <div class="conversations-sidebar">
+      <div class="sidebar-header">
+        <h3>Conversations</h3>
+        <button class="new-chat-btn" onclick="createNewConversation()">
+          <i class="ri-add-line"></i> New
+        </button>
+      </div>
+      <div id="conversationsList">
+        <p style="text-align: center; color: var(--text-secondary); padding: 2rem 0;">Loading conversations...</p>
+      </div>
+    </div>
+
+    <!-- Main Chat Container -->
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-info">
+          <h2 id="chatTitle">Valhalla AI Mentor</h2>
+          <div class="chat-status">
+            <span class="status-indicator"></span>
+            <span>Online & Ready to Help</span>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button class="action-btn" onclick="clearCurrentChat()">
+            <i class="ri-delete-bin-line"></i> Clear
+          </button>
+          <button class="action-btn" onclick="loadConversations()">
+            <i class="ri-refresh-line"></i> Refresh
+          </button>
+        </div>
+      </div>
+
+      <div class="messages-container" id="messages">
+        <div class="welcome-message">
+          <i class="ri-robot-2-line"></i>
+          <h3>Welcome to AI Mentor</h3>
+          <p>Ask me anything about coding, algorithms, data structures, or get personalized learning guidance!</p>
+        </div>
+      </div>
+
+      <div class="input-section">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="Type your message..."
+          onkeypress="if(event.key==='Enter') sendMessage()"
+        />
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+          <span>Send</span>
+          <i class="ri-send-plane-fill"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Valhalla<span class="logo-highlight">Labs</span></div>
+      <div class="footer-links">
+        <a href="../../index.html">Home</a>
+        <a href="../features/features.html">Features</a>
+        <a href="../problems/problems.html">Problems</a>
+        <a href="../contests/contests.html">Contests</a>
+        <a href="../interview/interview.html">Interview</a>
+        <a href="../university/university.html">University</a>
+        <a href="#">Mentor</a>
+        <a href="../contact/contact.html">Contact</a>
+      </div>
+      <p class="copyright">© 2025 Valhalla. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Particles Animation
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Configuration
+    const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    const GEMINI_API_KEY = "AIzaSyB9v_Y__cpXs2e2YjeNmL9jNucPTQSYlr8";
+    const JSON_SERVER_URL = "http://localhost:5000/conversations";
+    
+    let currentConversationId = null;
+    let chatHistory = [];
+
+    // Load conversations from JSON server
+    async function loadConversations() {
+      try {
+        const response = await fetch(JSON_SERVER_URL);
+        if (!response.ok) throw new Error('Failed to fetch conversations');
+        
+        const conversations = await response.json();
+        const listContainer = document.getElementById('conversationsList');
+        
+        if (conversations.length === 0) {
+          listContainer.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem 0;">No conversations yet. Start a new one!</p>';
+          return;
+        }
+        
+        listContainer.innerHTML = '';
+        conversations.reverse().forEach(conv => {
+          const item = document.createElement('div');
+          item.className = 'conversation-item';
+          if (conv.id === currentConversationId) item.classList.add('active');
+          
+          item.innerHTML = `
+            <div class="conversation-title">${conv.title || 'New Conversation'}</div>
+            <div class="conversation-preview">${conv.lastMessage || 'No messages yet'}</div>
+            <div class="conversation-time">${new Date(conv.timestamp).toLocaleString()}</div>
+          `;
+          
+          item.onclick = () => loadConversation(conv.id);
+          listContainer.appendChild(item);
+        });
+      } catch (error) {
+        console.error('Error loading conversations:', error);
+        document.getElementById('conversationsList').innerHTML = 
+          '<p style="text-align: center; color: #ef4444; padding: 2rem 0;">Error: Make sure JSON Server is running on port 5000</p>';
+      }
+    }
+
+    // Load specific conversation
+    async function loadConversation(id) {
+      try {
+        const response = await fetch(`${JSON_SERVER_URL}/${id}`);
+        const conversation = await response.json();
+        
+        currentConversationId = id;
+        chatHistory = conversation.messages || [];
+        
+        const messagesContainer = document.getElementById('messages');
+        messagesContainer.innerHTML = '';
+        
+        if (chatHistory.length === 0) {
+          messagesContainer.innerHTML = `
+            <div class="welcome-message">
+              <i class="ri-robot-2-line"></i>
+              <h3>Welcome to AI Mentor</h3>
+              <p>Ask me anything about coding, algorithms, data structures, or get personalized learning guidance!</p>
+            </div>
+          `;
+        } else {
+          chatHistory.forEach(msg => {
+            addMessageToUI(msg.role === 'user' ? 'user' : 'bot', msg.parts[0].text);
+          });
+        }
+        
+        document.getElementById('chatTitle').textContent = conversation.title || 'Valhalla AI Mentor';
+        loadConversations(); // Refresh sidebar
+      } catch (error) {
+        console.error('Error loading conversation:', error);
+      }
+    }
+
+    // Create new conversation
+    async function createNewConversation() {
+      try {
+        const newConv = {
+          title: 'New Conversation',
+          messages: [],
+          timestamp: new Date().toISOString(),
+          lastMessage: ''
+        };
+        
+        const response = await fetch(JSON_SERVER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newConv)
+        });
+        
+        const created = await response.json();
+        currentConversationId = created.id;
+        chatHistory = [];
+        
+        document.getElementById('messages').innerHTML = `
+          <div class="welcome-message">
+            <i class="ri-robot-2-line"></i>
+            <h3>Welcome to AI Mentor</h3>
+            <p>Ask me anything about coding, algorithms, data structures, or get personalized learning guidance!</p>
+          </div>
+        `;
+        
+        loadConversations();
+      } catch (error) {
+        console.error('Error creating conversation:', error);
+        alert('Error: Make sure JSON Server is running on port 5000');
+      }
+    }
+
+    // Save conversation to JSON server
+    async function saveConversation() {
+      if (!currentConversationId) return;
+      
+      try {
+        const lastMessage = chatHistory.length > 0 
+          ? chatHistory[chatHistory.length - 1].parts[0].text.substring(0, 50) + '...'
+          : 'No messages yet';
+        
+        const title = chatHistory.length > 0
+          ? chatHistory[0].parts[0].text.substring(0, 30) + '...'
+          : 'New Conversation';
+        
+        await fetch(`${JSON_SERVER_URL}/${currentConversationId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: currentConversationId,
+            title: title,
+            messages: chatHistory,
+            timestamp: new Date().toISOString(),
+            lastMessage: lastMessage
+          })
+        });
+        
+        loadConversations();
+      } catch (error) {
+        console.error('Error saving conversation:', error);
+      }
+    }
+
+    // Add message to UI
+    function addMessageToUI(type, text) {
+      const messages = document.getElementById('messages');
+      const welcome = messages.querySelector('.welcome-message');
+      if (welcome) welcome.remove();
+
+      const msg = document.createElement('div');
+      msg.className = `message ${type}`;
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.innerHTML = type === 'user' ? '<i class="ri-user-line"></i>' : '<i class="ri-robot-line"></i>';
+      
+      const content = document.createElement('div');
+      content.className = 'message-content';
+      content.textContent = text;
+      
+      msg.appendChild(avatar);
+      msg.appendChild(content);
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function showLoading() {
+      const messages = document.getElementById('messages');
+      const msg = document.createElement('div');
+      msg.className = 'message bot';
+      msg.id = 'loading';
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.innerHTML = '<i class="ri-robot-line"></i>';
+      
+      const content = document.createElement('div');
+      content.className = 'message-content';
+      content.innerHTML = '<div class="loading"><span></span><span></span><span></span></div>';
+      
+      msg.appendChild(avatar);
+      msg.appendChild(content);
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function removeLoading() {
+      const loading = document.getElementById('loading');
+      if (loading) loading.remove();
+    }
+
+    // Send message
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      // Create new conversation if none exists
+      if (!currentConversationId) {
+        await createNewConversation();
+      }
+
+      addMessageToUI('user', text);
+      input.value = '';
+      showLoading();
+      
+      const sendBtn = document.getElementById('sendBtn');
+      sendBtn.disabled = true;
+      input.disabled = true;
+
+      try {
+        chatHistory.push({ role: 'user', parts: [{ text }] });
+
+        const res = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: chatHistory })
+        });
+
+        const data = await res.json();
+        removeLoading();
+
+        const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response from model.';
+        addMessageToUI('bot', reply);
+        chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+        
+        // Save to JSON server
+        await saveConversation();
+      } catch (err) {
+        console.error(err);
+        removeLoading();
+        addMessageToUI('bot', 'Error: ' + err.message);
+      }
+
+      sendBtn.disabled = false;
+      input.disabled = false;
+      input.focus();
+    }
+
+    // Clear current chat
+    function clearCurrentChat() {
+      if (!currentConversationId) return;
+      
+      if (confirm('Are you sure you want to clear this conversation?')) {
+        chatHistory = [];
+        document.getElementById('messages').innerHTML = `
+          <div class="welcome-message">
+            <i class="ri-robot-2-line"></i>
+            <h3>Welcome to AI Mentor</h3>
+            <p>Ask me anything about coding, algorithms, data structures, or get personalized learning guidance!</p>
+          </div>
+        `;
+        saveConversation();
+      }
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+      loadConversations();
+      document.getElementById('userInput').focus();
+    });
+  </script>
+</body>
+</html>
